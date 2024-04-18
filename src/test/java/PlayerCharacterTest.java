@@ -26,4 +26,19 @@ public class PlayerCharacterTest {
         int expected = 0;
         assertEquals(expected, actual);
     }
+
+    @Test
+    void moveWhenCharWThenReturnY1() {
+        //GIVEN
+        char character = 'W';
+
+        //WHEN
+        int actual = PlayerCharacter.move('W');
+
+        //THEN
+        int expected = 1;
+        assertEquals(expected, actual);
+    }
+
+
 }
