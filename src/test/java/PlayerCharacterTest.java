@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PlayerCharacterTest {
@@ -28,16 +29,55 @@ public class PlayerCharacterTest {
     }
 
     @Test
-    void moveWhenCharWThenReturnY1() {
+    void moveWhenCharWThenReturnX0Y1() {
         //GIVEN
         char character = 'W';
 
         //WHEN
-        int actual = PlayerCharacter.move('W');
+        int[] actual = PlayerCharacter.move(character);
 
         //THEN
-        int expected = 1;
-        assertEquals(expected, actual);
+        int[] expected = {0,1};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void moveWhenCharAThenReturnXMinus1Y0() {
+        //GIVEN
+        char character = 'A';
+
+        //WHEN
+        int[] actual = PlayerCharacter.move(character);
+
+        //THEN
+        int[] expected = {-1,0};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void moveWhenCharDThenReturnX1Y0() {
+        //GIVEN
+        char character = 'D';
+
+        //WHEN
+        int[] actual = PlayerCharacter.move(character);
+
+        //THEN
+        int[] expected = {1,0};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void moveWhenCharSThenReturnX0YMinus1() {
+        //GIVEN
+        char character = 'S';
+
+        //WHEN
+        int[] actual = PlayerCharacter.move(character);
+
+        //THEN
+        int[] expected = {0,-1};
+        assertArrayEquals(expected, actual);
     }
 
 
