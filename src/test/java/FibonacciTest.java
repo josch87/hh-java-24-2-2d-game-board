@@ -77,7 +77,7 @@ public class FibonacciTest {
         long actual = Fibonacci.fibonacci(n);
 
         //THEN
-        long expected = 12586269025;
+        long expected = 12_586_269_025L;
         Assertions.assertEquals(expected, actual);
     }
 }
