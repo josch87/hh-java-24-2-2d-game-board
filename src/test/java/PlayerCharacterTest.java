@@ -1,9 +1,17 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PlayerCharacterTest {
+
+    @BeforeEach
+    void resetState() {
+        PlayerCharacter.x = 0;
+        PlayerCharacter.y = 0;
+    }
+
     @Test
     void getXReturn0() {
         //GIVEN
